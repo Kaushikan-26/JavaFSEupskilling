@@ -1,0 +1,14 @@
+public class Virtualthread{
+    public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+
+        for (int i = 0; i < 100_000; i++) {
+            Thread.startVirtualThread(() -> {
+                // System.out.println("Hello from virtual thread"); // Uncomment to see output
+            });
+        }
+
+        long end = System.currentTimeMillis();
+        System.out.println("Completed in: " + (end - start) + " ms");
+    }
+}
